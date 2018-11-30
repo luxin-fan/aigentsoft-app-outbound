@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="ActivityInfo" table="t_activity_info">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="name" column="name" length="50" />
+  <property name="domain" column="domain" length="50"/>
+  <property name="status" column="status" type="integer"/>
+  <property name="region" column="region" length="50"/>
+  <property name="descb" column="descb" length="128" />
+  <property name="policyName" column="policyName" length="50" />
+  <property name="rosterTemplateName" column="rosterTemplateName" length="50"/>
+  <property name="maxCapacity" column="maxCapacity" type="integer"/>
+  <property name="priority" column="priority" type="integer"/>
+  
+  <property name="localNo" column="localNo" length="50"/>
+  <property name="conditionInfo" column="conditionInfo" length="1000"/>
+  <property name="uui" column="uui" length="200"/>
+  <property name="trunkGrp" column="trunkGrp" length="50"/>
+  <property name="lastUpdateTime" column="lastUpdateTime" length="64"/>
+  <property name="prefix" column="prefix" length="50"/>
+  
+  <property name="beginDatetime" column="beginDatetime" length="50"/>
+  <property name="endDatetime" column="endDatetime" length="50"/>
+  <property name="activityExecuteType" column="activityExecuteType" type="integer"/>
+  <property name="activityExecuteTime" column="activityExecuteTime" length="50"/>
+  
+  <property name="activityBackTime" column="activityBackTime" length="50"/>
+  <property name="activityBackAddr" column="activityBackAddr" length="500"/>
+  <property name="activityBackAddrType" column="activityBackAddrType" type="integer"/>
+  
+  <property name="completeType" column="completeType" type="integer"/>
+  <property name="orderType" column="orderType" length="50"/>
+  <!-- 
+  <property name="rosterNum" column="roterNum" type="integer"/>
+  <property name="batchNum" column="batchNum" type="integer"/>
+  <property name="completeBatchNum" column="completeBatchNum" type="integer"/>
+  <property name="outCallNum" column="outCallNum" type="integer"/>
+  <property name="outCallRosterNum" column="outCallRosterNum" type="integer"/>
+  <property name="unCallNum" column="unCallNum" type="integer"/>
+  <property name="answerCallNum" column="answerCallNum" type="integer"/>
+  <property name="dncNum" column="dncNum" type="integer"/>
+  <property name="outCallTimeNum" column="outCallTimeNum" type="integer"/>
+   -->
+ </class>
+</hibernate-mapping>
+

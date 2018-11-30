@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="OutboundPolicyInfo" table="t_outbound_policy_info">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="name" column="name" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="descb" column="descb" length="80"/>
+  <property name="timeRangeStr" column="timeRangeStr" length="500"/>
+  <property name="resProcessStr" column="resProcessStr" length="500"/>
+  <property name="policyType" column="policyType" type="integer"/>
+  <property name="workDayType" column="workDayType" type="integer"/>
+  <property name="callAnswerStep" column="callAnswerStep" length="100"/>
+ </class>
+</hibernate-mapping>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="MobileRegion" table="t_mobile_region">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="phoneNum" column="phoneNum" length="50"/>
+  <property name="region" column="region" length="50"/>
+ </class>
+</hibernate-mapping>
+

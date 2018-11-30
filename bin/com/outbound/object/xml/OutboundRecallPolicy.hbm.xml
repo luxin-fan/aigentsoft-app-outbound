@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="OutboundRecallPolicy" table="t_outbound_recall_policy">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="activityName" column="activityName" length="50"/>
+  <property name="round" column="round" type="integer"/>
+  <property name="callResult" column="callResult" length="50"/>
+  <property name="phoneNumCol" column="phoneNumCol" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="callInterval" column="callInterval" type="integer"/>
+  <property name="processInfo" column="processInfo" length="200"/>
+ </class>
+</hibernate-mapping>
+

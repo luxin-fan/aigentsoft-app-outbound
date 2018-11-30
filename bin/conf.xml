@@ -1,0 +1,28 @@
+<config name="config">
+	<!-- 服务监听端口 -->
+	<variable name="port">
+		8141
+	</variable>
+	<!-- 服务监听IP -->
+	<variable name="bind_ip">
+		0.0.0.0
+	</variable>
+	<!-- Redis连接地址 -->
+	<variable name="db_url">
+		172.16.2.253:6379
+	</variable>
+	<!-- 服务连接Redis 密码 -->
+	<variable name="db_pwd">
+		 
+	</variable>
+	<!-- Conf 服务地址 -->
+	<variable name="outbound_url">
+		http://127.0.0.1:8139/ocm/v1/csta/makecall
+	</variable>
+	<variable name="penny_url">
+		http://externalb.senseinfo.cn:8080/external/openApi/job/pushJobResult
+	</variable>
+	<variable name="instance_id">
+		app-outbound-1
+	</variable>
+</config>

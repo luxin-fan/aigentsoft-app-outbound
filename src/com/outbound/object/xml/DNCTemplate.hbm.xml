@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="DNCTemplate" table="t_dnc_template">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="dncTemplateName" column="dncTemplateName" length="50"/>
+  <property name="dncTemplateDesc" column="dncTemplateDesc" length="100"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="type" column="type" type="integer"/>
+  <property name="serverType" column="serverType" type="integer"/>
+  <property name="serverAddr" column="serverAddr" length="500"/>
+  <property name="status" column="status" type="integer"/>
+  <property name="creater" column="creater" length="50"/>
+  <property name="updater" column="updater" length="50"/>
+  <property name="updateTime" column="updateTime" length="100"/>
+  <property name="executeTime" column="executeTime" length="50"/>
+  <property name="filterCondition" column="filterCondition" length="100"/>
+   <property name="importMode" column="importMode" length="50"/>
+  <property name="importPath" column="importPath" length="500"/>
+ </class>
+</hibernate-mapping>
+

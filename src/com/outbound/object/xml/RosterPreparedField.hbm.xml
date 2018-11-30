@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="RosterTemplatePreparedField" table="t_roster_prepared_field">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="prepareFieldName" column="prepareFieldName" length="50"/>
+  <property name="prepareFieldDesc" column="prepareFieldDesc" length="50"/>
+  <property name="prepareFieldType" column="prepareFieldType" length="20"/>
+  <property name="status" column="status" type="integer"/>
+  <property name="creater" column="creater" length="50"/>
+  <property name="updater" column="updater" length="50"/>
+  <property name="createTime" column="createTime" length="50"/>
+  <property name="updateTime" column="updateTime" length="50"/>
+  <property name="beAllowedEncrypt" column="beAllowedEncrypt" type="integer"/>
+ </class>
+</hibernate-mapping>
+

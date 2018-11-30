@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="Roster" table="t_roster">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="phoneNum1" column="phoneNum1" length="50"/>
+  <property name="phoneNum2" column="phoneNum2" length="50"/>
+  <property name="phoneNum3" column="phoneNum3" length="50"/>
+  <property name="phoneNum4" column="phoneNum4" length="50"/>
+  <property name="phoneNum5" column="phoneNum5" length="50"/>
+  <property name="lastname" column="lastname" length="50"/>
+  <property name="firstname" column="firstname" length="200"/>
+  <property name="age" column="age" type="integer"/>
+  <property name="sex" column="sex" length="10"/>
+  <property name="customerId" column="customerId" length="50"/>
+  <property name="email" column="email" length="255"/>
+  <property name="address" column="address" length="50"/>
+  <property name="cardType" column="cardType" length="50"/>
+  <property name="cardNum" column="cardNum" length="100"/>
+  <property name="customFields" column="customFields" length="1000"/>
+  <property name="createTime" column="createTime" length="50"/>
+  <property name="status" column="status" type="integer"/>
+  <property name="batchName" column="batchName" length="50"/>
+  <property name="templateName" column="templateName" length="50"/>
+  <property name="activityName" column="activityName" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="reCall" column="reCall" type="integer"/>
+  <property name="callRound" column="callRound" type="integer"/>
+  <property name="makeCallTime" column="makeCallTime" length="50"/>
+ </class>
+</hibernate-mapping>
+

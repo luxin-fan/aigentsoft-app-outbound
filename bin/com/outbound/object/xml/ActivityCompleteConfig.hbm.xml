@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="ActivityCompleteConfig" table="t_activity_complete_config">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="name" column="name" length="50" />
+  <property name="status" column="status" type="integer"/>
+  <property name="completeCondition" column="completeCondition" length="20"/>
+  <property name="completeSymbol" column="completeSymbol" length="20"/>
+  <property name="completeContent" column="completeContent" length="50" />
+  <property name="creater" column="creater" length="50" />
+  <property name="updater" column="updater" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="updateTime" column="updateTime" length="64"/>
+  
+ </class>
+</hibernate-mapping>
+

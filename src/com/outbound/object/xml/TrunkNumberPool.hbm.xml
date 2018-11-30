@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="TrunkNumberPool" table="t_trunk_number_pool">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="name" column="name" length="50"/>
+  <property name="descb" column="descb" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="trunkChannels" column="trunkChannels" type="integer"/>
+ </class>
+</hibernate-mapping>
+

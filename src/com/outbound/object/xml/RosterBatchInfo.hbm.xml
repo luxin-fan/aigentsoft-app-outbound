@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="RosterBatchInfo" table="t_roster_batch_info">
+  <id name="id" type="integer" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="batchId" column="batchId" length="50"/>
+  <property name="status" column="status" type="integer"/>
+  <property name="templateName" column="templateName" length="50"/>
+  <property name="activityName" column="activityName" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="createTime" column="createTime" length="50"/>
+  <property name="startTime" column="startTime" length="50"/>
+  <property name="completeTime" column="completeTime" length="50"/>
+  <property name="callRound" column="callRound" type="integer"/>
+  
+  <property name="roterNum" column="roterNum" type="integer"/>
+  <property name="outCallNum" column="outCallNum" type="integer"/>
+  <property name="unCallNum" column="unCallNum" type="integer"/>
+  <property name="answerCallNum" column="answerCallNum" type="integer"/>
+  <property name="dncNum" column="dncNum" type="integer"/>
+  <property name="fail1Num" column="fail1Num" type="integer"/>
+  <property name="fail2Num" column="fail2Num" type="integer"/>
+  <property name="fail3Num" column="fail3Num" type="integer"/>
+  <property name="fail4Num" column="fail4Num" type="integer"/>
+  <property name="fail5Num" column="fail5Num" type="integer"/>
+  <property name="fail6Num" column="fail6Num" type="integer"/>
+  <property name="fail7Num" column="fail7Num" type="integer"/>
+  <property name="failOtherNum" column="failOtherNum" type="integer"/>
+ </class>
+</hibernate-mapping>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="MonitorHistory" table="t_monitor_history">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="monitorTime" column="monitorTime" length="50"/>
+  <property name="monitorCount" column="monitorCount" type="integer"/>
+  <property name="monitorType" column="monitorType" type="integer"/>
+  <property name="status" column="status" type="integer"/>
+  <property name="creater" column="creater" length="50"/>
+  <property name="updater" column="updater" length="50"/>
+  <property name="updateTime" column="updateTime" length="50"/>
+ </class>
+</hibernate-mapping>
+

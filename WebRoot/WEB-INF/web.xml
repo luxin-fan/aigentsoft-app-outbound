@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+	<display-name>outbound_Server</display-name>
+	<description></description>
+
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>outbound Service</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer
+		</servlet-class>
+		 <init-param>
+	         <param-name>javax.ws.rs.container.ContainerResponseFilters</param-name>  
+          	<param-value>app.orm.rosterserver.web.CrosFilter</param-value> 
+	  	</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.outbound.resources</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>outbound Service</servlet-name>
+		<url-pattern>/v1/*</url-pattern>
+	</servlet-mapping>
+	
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<!-- Override init parameter to avoid nasty -->
+		<!-- file locking issue on windows. -->
+		<servlet-name>default</servlet-name>
+		<init-param>
+			<param-name>useFileMappedBuffer</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+</web-app>

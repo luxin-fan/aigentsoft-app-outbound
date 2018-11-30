@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="Holiday" table="t_holiday">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="startDate" column="startDate" length="50"/>
+  <property name="endDate" column="endDate" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="holidayType" column="holidayType" type="integer"/>
+ </class>
+</hibernate-mapping>
+

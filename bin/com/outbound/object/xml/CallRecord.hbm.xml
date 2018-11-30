@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="CallRecord" table="t_callrecord">
+  <id name="id" length="20" column="id">
+    <generator class="identity" />
+  </id>
+  <property name="uuid" column="uuid" length="100" />
+  <property name="caller" column="caller" length="20" />
+  <property name="callee" column="callee" length="20" />
+  <property name="callType" column="callType" type="integer"/>
+  <property name="sipcallId" column="sipcallId" length="100"/>
+  <property name="sipNetIp" column="sipNetIp" length="50"/>
+  <property name="startTime" column="startTime" length="50"/>
+  <property name="answerTime" column="answerTime" length="50"/>
+  <property name="answerCallTime" column="answerCallTime" length="50"/>
+  <property name="holdTime" column="holdTime" length="50"/>
+  <property name="transferTime" column="transferTime" length="50"/>
+  <property name="hangupTime" column="hangupTime" length="50"/>
+  <property name="hangupCause" column="hangupCause" length="50"/>
+  <property name="queueTime" column="queueTime" type="integer"/>
+  <property name="ringTime" column="ringTime" type="integer"/>
+  <property name="lastTime" column="lastTime" type="integer"/>
+  <property name="intrunkInfo" column="intrunkInfo" length="50"/>
+  <property name="gatewayInfo" column="gatewayInfo" length="50"/>
+  <property name="isRecord" column="isRecord" type="integer"/>
+  <property name="recordTime" column="recordTime" type="integer"/>
+  <property name="billingMoney" column="billingMoney" type="float"/>
+  <property name="billingTime" column="billingTime" type="integer"/>
+  <property name="recordPath" column="recordPath" length="50"/>
+  <property name="recordServer" column="recordServer" length="50"/>
+  <property name="switchId" column="switchId" type="integer" not-null="true"/>
+  <property name="tenantId" column="tenantId" type="integer" />
+  <property name="agentId" column="agentId"  length="50" />
+  <property name="skill" column="skill"  length="50" />
+  <property name="readCodec" column="readCodec"  length="50" />
+  <property name="writeCodec" column="writeCodec"  length="50" />
+  <property name="localMediaIp" column="localMediaIp"  length="50" />
+  <property name="remoteMediaIp" column="remoteMediaIp"  length="50" />
+  <property name="localMediaPort" column="localMediaPort" type="integer" />
+  <property name="remoteMediaPort" column="remoteMediaPort" type="integer" />
+ </class>
+</hibernate-mapping>
+

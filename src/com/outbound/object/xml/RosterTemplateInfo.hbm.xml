@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="RosterTemplateInfo" table="t_roster_template_info">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="name" column="name" length="50"/>
+  <property name="descb" column="descb" length="50"/>
+  <property name="domain" column="domain" length="50"/>
+  <property name="columns" column="columns" length="1000"/>
+  <property name="createtime" column="createtime" length="50"/>
+  <property name="lastModifyTime" column="lastModifyTime" length="50"/>
+  <property name="importPath" column="importPath" length="200"/>
+  <property name="importMode" column="importMode" length="50"/>
+  <property name="importTime" column="importTime" length="50"/>
+  <property name="executeTime" column="executeTime" length="50"/>
+  <property name="lastImportTime" column="lastImportTime" length="50"/>
+  <property name="lastImportStatus" column="lastImportStatus" length="50"/>
+  <property name="filterCondition" column="filterCondition" length="500"/>
+  <property name="expireDays" column="expireDays" type="integer"/>
+  <property name="contactNums" column="contactNums" type="integer"/>
+ </class>
+</hibernate-mapping>
+

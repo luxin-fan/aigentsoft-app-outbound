@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"[]>
+<hibernate-mapping package="com.outbound.object">
+ <class name="ActivityStat" table="t_activity_stat">
+  <id name="id" length="20" column="id">
+     <generator class="identity" />
+  </id>
+  <property name="activityName" column="activityName" length="50" />
+  <property name="rosterName" column="rosterName" length="50"/>
+  <property name="state" column="state" length="10"/>
+  <property name="starttime" column="starttime" length="50" />
+  <property name="endtime" column="endtime" length="50"/>
+  
+  <property name="rosterNums" column="rosterNums" type="integer"/>
+  <property name="outreachRosterNums" column="outreachRosterNums" type="integer"/>
+  <property name="establshRosterNums" column="establshRosterNums" type="integer"/>
+  <property name="totalCalls" column="totalCalls" type="integer"/>
+  <property name="establishCalls" column="establishCalls" type="integer"/>
+  <property name="validCalls" column="validCalls" type="integer"/>
+  <property name="deliverIvrCalls" column="deliverIvrCalls" type="integer"/>
+  <property name="deliverAgentCalls" column="deliverAgentCalls" type="integer"/>
+  
+ </class>
+</hibernate-mapping>
+

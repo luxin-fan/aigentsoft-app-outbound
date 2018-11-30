@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- class="org.apache.commons.dbcp.BasicDataSource" -->
+<beans>
+  <bean id="dataSource"
+	  class="com.outbound.monitor.EncodeDataSource"	  
+	  destroy-method="close">
+	  <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	  <property name="url"
+	   value="jdbc:mysql://172.16.2.253:3306/outbound_db?useUnicode=true&amp;characterEncoding=UTF-8"/>
+	  <property name="username" value="cm9vdA==" />
+	  <property name="password" value="b3BlbnNpcHMzMjE=" />
+ </bean>
+ 
+  <bean id="dataSource2"
+	  class="com.outbound.monitor.EncodeDataSource"	
+	  destroy-method="close">
+	  <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	  <property name="url"
+             value="jdbc:mysql://172.16.2.253:3306/report_db?useUnicode=true&amp;characterEncoding=UTF-8"/>
+             <property name="username" value="cm9vdA==" />
+	  <property name="password" value="b3BlbnNpcHMzMjE=" />
+  </bean>
+ 
+ <bean id="SessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+   <property name="dataSource">
+   <ref bean="dataSource" />
+  </property>
+    <property name="hibernateProperties">
+   <props>
+    <prop key="hibernate.dialect">
+     	org.hibernate.dialect.MySQLDialect
+    </prop>
+     <prop key="hibernate.hbm2ddl.auto">update</prop>
+   </props>
+  </property>
+  <property name="mappingResources">
+   <list>
+	<value>com/outbound/object/xml/ActivityInfo.hbm.xml</value>
+	<value>com/outbound/object/xml/ActivityInfoHistory.hbm.xml</value>
+	<value>com/outbound/object/xml/ActivityCompleteConfig.hbm.xml</value>
+	<value>com/outbound/object/xml/CallResultMap.hbm.xml</value>
+	<value>com/outbound/object/xml/ConfigParam.hbm.xml</value>
+	<value>com/outbound/object/xml/DNCNumber.hbm.xml</value>
+	<value>com/outbound/object/xml/DNCTemplate.hbm.xml</value>
+	<value>com/outbound/object/xml/Holiday.hbm.xml</value>
+	<value>com/outbound/object/xml/OutboundRecallPolicy.hbm.xml</value>
+	<value>com/outbound/object/xml/OutboundPolicyInfo.hbm.xml</value>
+	<value>com/outbound/object/xml/RosterBatch.hbm.xml</value>
+	<value>com/outbound/object/xml/RosterBatchInfo.hbm.xml</value>
+	<value>com/outbound/object/xml/Roster.hbm.xml</value>
+	<value>com/outbound/object/xml/RosterInfo.hbm.xml</value>
+	<value>com/outbound/object/xml/RosterInfoHistory.hbm.xml</value>
+	<value>com/outbound/object/xml/RosterTemplateInfo.hbm.xml</value>
+	<value>com/outbound/object/xml/RosterPreparedField.hbm.xml</value>
+	<value>com/outbound/object/xml/TrunkNumber.hbm.xml</value>
+	<value>com/outbound/object/xml/TrunkNumberPool.hbm.xml</value>
+	<value>com/outbound/object/xml/TrunkPoolCorr.hbm.xml</value>
+   </list>
+  </property>
+ </bean>
+<!-- start of 报表信息对象信息 -->
+ <bean id="SessionFactory2"
+  	class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+   <property name="dataSource">
+   	   <ref bean="dataSource2" />
+  </property>
+    <property name="hibernateProperties">
+   <props>
+    <prop key="hibernate.dialect">
+     	org.hibernate.dialect.MySQLDialect
+    </prop>
+     <prop key="hibernate.hbm2ddl.auto">update</prop>
+   </props>
+  </property>
+   <property name="mappingResources">
+   <list>
+   		<value>com/outbound/object/xml/CallRecord.hbm.xml</value>
+   </list>
+  </property>
+ </bean>
+ <!-- end of 报表服务器对象信息 -->
+
+<bean class="com.outbound.object.util.ApplicationContextUtil"></bean>
+
+<bean id="HolidayDAO" class="com.outbound.object.dao.HolidayDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="ConfigParamDAO" class="com.outbound.object.dao.ConfigParamDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="TrunkNumberDAO" class="com.outbound.object.dao.TrunkNumberDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="TrunkNumberPoolDAO" class="com.outbound.object.dao.TrunkNumberPoolDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+ 
+ <bean id="TrunkPoolCorrDAO" class="com.outbound.object.dao.TrunkPoolCorrDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterTemplateDAO" class="com.outbound.object.dao.RosterTemplateDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterTemplatePreFieldDAO" class="com.outbound.object.dao.RosterTemplatePreFieldDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterDAO" class="com.outbound.object.dao.RosterDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterInfoDAO" class="com.outbound.object.dao.RosterInfoDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterHistoryDAO" class="com.outbound.object.dao.RosterHistoryDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterBatchDAO" class="com.outbound.object.dao.RosterBatchDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="RosterBatchInfoDAO" class="com.outbound.object.dao.RosterBatchInfoDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="OutboundPolicyInfoDAO" class="com.outbound.object.dao.OutboundPolicyInfoDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="OutboundRecallPolicyDAO" class="com.outbound.object.dao.OutboundRecallPolicyDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+<bean id="DNCTemplateDAO" class="com.outbound.object.dao.DNCTemplateDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+ 
+ <bean id="DNCNumberDAO" class="com.outbound.object.dao.DNCNumberDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+ <bean id="ActivityInfoDAO" class="com.outbound.object.dao.ActivityInfoDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+ <bean id="ActivityInfoHistoryDAO" class="com.outbound.object.dao.ActivityInfoHistoryDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+
+ <bean id="ActivityCompleteConfigDAO" class="com.outbound.object.dao.ActivityCompleteConfigDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory" />
+	</property>
+</bean>
+<bean id="CallRecordDAO" class="com.outbound.object.dao.CallRecordDAO">
+	<property name="sessionFactory">
+		<ref bean="SessionFactory2" />
+	</property>
+</bean>
+</beans>
